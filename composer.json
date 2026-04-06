@@ -1,0 +1,32 @@
+{
+    "name": "stitchdb/laravel",
+    "description": "StitchDB database driver for Laravel. Use Eloquent with StitchDB — just change your DB_CONNECTION.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["stitchdb", "laravel", "database", "eloquent", "edge", "sqlite"],
+    "authors": [
+        {
+            "name": "StitchDB",
+            "email": "support@stitchdb.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "ext-curl": "*",
+        "illuminate/database": "^8.0|^9.0|^10.0|^11.0|^12.0",
+        "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "StitchDB\\Laravel\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "StitchDB\\Laravel\\StitchDBServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}
