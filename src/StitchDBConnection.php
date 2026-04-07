@@ -21,6 +21,14 @@ class StitchDBConnection extends Connection
     protected array $transactionBuffer = [];
     protected bool $buffering = false;
 
+    /**
+     * Lazy query batch — queries are queued here and sent together
+     * when any result is first accessed.
+     */
+    protected array $lazyQueries = [];
+    protected array $lazyResults = [];
+    protected bool $lazyFlushed = false;
+
     public function __construct($pdo, $database = '', $tablePrefix = '', array $config = [])
     {
         parent::__construct($pdo, $database, $tablePrefix, $config);
